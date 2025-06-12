@@ -1,0 +1,55 @@
+작성 요령)
+
+1. 패키지와 클래스를 제시된 설계도와 같이 작성합니다.
+
+2. 먼저 멤버 필드들을 작성합니다.
+
+3. 기본 생성자를 작성합니다.
+
+4. eclipse의 Source 메뉴에 있는 코드 자동 생성 메뉴를 활용하여 전체 필드를 인자로 받는 오버로딩 생성자를 작성합니다.
+
+Source → Generate Constructor Using Fields 메뉴 활용
+
+5. 역시 코드 자동 생성 메뉴를 활용하여 각 필드들에 대한 getter/setter 메서드들을 일괄적으로 작성합니다. 
+
+Source → Generate Getters and Setters
+
+6. 코드 자동 생성 메뉴를 활용하여 toString 메서드를 오버라이딩합니다. 오버라이딩 내부 코드는 자동화 생성 메뉴 내에서도 선택적으로 자유롭게 구성할 수 있으며, 자바빈 클래스의 멤버 필드들의 현황을 볼 수 있도록 구성하면 되겠습니다.
+
+Source → Generate toString()
+
+7. 자바빈 인스턴스간의 멤버 필드들을 비교할 수 있게 도와주는 hashCode, equals 메서드를 코드 자동 생성 메뉴를 활용하여 오버라이딩합니다.
+
+Source → Generate hashCode() and equals()
+
+8. main 메서드를 작성하여 아래와 같이 실행 및 테스트합니다.
+
+		MemberVO vo = new MemberVO();
+		vo.setId("abcd1234");
+		vo.setPw("#Abcd1234");
+		vo.setName("자바맨");
+		vo.setGender("남");
+		vo.setEmail("abcd@abcd.com");
+		vo.setPhone("01012345678");
+		vo.setZip("13615");
+		vo.setBasicAddress("경기도 성남시 분당구 돌마로 47");
+		vo.setDetailAddress("4층 그린컴퓨터아카데미 410호");
+		vo.setJoindate(Date.valueOf("2000-01-01"));
+		
+		MemberVO vo2 = new MemberVO();
+		vo2.setId("abcd1234");
+		vo2.setPw("#Abcd1234");
+		vo2.setName("자바맨");
+		vo2.setGender("남");
+		vo2.setEmail("abcd@abcd.com");
+		vo2.setPhone("01012345678");
+		vo2.setZip("13615");
+		vo2.setBasicAddress("경기도 성남시 분당구 돌마로 47");
+		vo2.setDetailAddress("4층 그린컴퓨터아카데미 410호");
+		vo2.setJoindate(Date.valueOf("2000-01-01"));
+		
+		System.out.println("vo : "+ vo);
+		
+		System.out.println(vo.equals(vo2));
+		System.out.println(vo.hashCode());
+		System.out.println(vo2.hashCode());
