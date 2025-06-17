@@ -1,0 +1,20 @@
+クラス = メンバー(フィールド + メソッド)
+
+추상クラス = 추상メソッド（宣言部だけ、body X）
+コンストラクター（直接生成は X）
+
+// super("abcd")	// 明示的にしなくてもあるように。
+A a = new B();
+
+インターフェース = 宣伝・紹介 + 指示
+추상メソッド = 상수 + コンストラクター（X)
+since 8
+
+static, private, main, default => 再定義（非強制的）
+융통성이 있다.
+
+永続貯蔵庫 = DB
+Java Bean : 永続オブジェクト（PO）: DTO, VO, DAO
+
+フィールド => getter/setter => コンストラクター => toString => hashCode, equals
+自動生成も参考にしなさい。(lombok)
